@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">Dagger2 Android Demo</string>
+  <string name="dummy_activity">Go to DummyActivity</string>
+  <string name="hello_world">Hello world!</string>
 </resources>

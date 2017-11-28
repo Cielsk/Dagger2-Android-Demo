@@ -2,15 +2,16 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cielyang.android.daggerdemo.main.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.cielyang.android.daggerdemo.dummy.DummyActivityActivity">
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_dummy_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/dummy_activity"
+    <FrameLayout
+        android:id="@+id/frame_layout_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
