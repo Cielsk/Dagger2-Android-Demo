@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cielyang.android.daggerdemo.dummy.DummyActivityActivity">
+    tools:context="com.cielyang.android.daggerdemo.dummy.DummyActivity">
 
     <FrameLayout
         android:id="@+id/frame_layout_content"

@@ -7,9 +7,10 @@ import android.widget.Toast;
 
 import com.cielyang.android.daggerdemo.R;
 import com.cielyang.android.daggerdemo.base.BaseActivity;
-import com.cielyang.android.daggerdemo.dummy.DummyActivityActivity;
+import com.cielyang.android.daggerdemo.dummy.DummyActivity;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +23,7 @@ public class MainActivity extends BaseActivity {
     AppCompatButton mBtnDummyActivity;
 
     @Inject
+    @Named("main")
     String mToastContent;
 
     @Override
@@ -39,6 +41,6 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_dummy_activity)
     public void onViewClicked() {
-        startActivity(new Intent(MainActivity.this, DummyActivityActivity.class));
+        startActivity(new Intent(MainActivity.this, DummyActivity.class));
     }
 }
