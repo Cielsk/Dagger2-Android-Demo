@@ -4,12 +4,18 @@ import android.app.Application;
 
 import com.cielyang.android.daggerdemo.base.MyApplication;
 
+import javax.inject.Singleton;
+
 import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 /** */
-@Component(modules = {AppModule.class, AndroidSupportInjectionModule.class})
+@Singleton
+@Component(
+        modules = {AppModule.class, ActivityBindingModule.class,
+                AndroidSupportInjectionModule.class}
+)
 public interface AppComponent {
 
     void inject(MyApplication application);

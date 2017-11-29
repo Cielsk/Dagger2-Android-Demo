@@ -3,13 +3,15 @@ package com.cielyang.android.daggerdemo.di;
 import android.app.Application;
 import android.content.Context;
 
+import com.cielyang.android.daggerdemo.main.MainActivityComponent;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
 /** */
-@Module
+@Module(subcomponents = {MainActivityComponent.class})
 public class AppModule {
 
     @Singleton
