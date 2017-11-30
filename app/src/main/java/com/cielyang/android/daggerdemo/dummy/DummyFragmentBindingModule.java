@@ -9,7 +9,7 @@ import dagger.android.support.FragmentKey;
 import dagger.multibindings.IntoMap;
 
 /** */
-@Module
+@Module(subcomponents = DummyFragmentComponent.class)
 public abstract class DummyFragmentBindingModule {
 
     @Binds

@@ -8,7 +8,7 @@ import dagger.Provides;
 /**
  *
  */
-@Module(subcomponents = DummyFragmentComponent.class)
+@Module
 public class DummyActivityModule {
 
     @ActivityScoped

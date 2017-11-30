@@ -14,18 +14,18 @@ import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
 
 /** */
-@Module
+@Module(subcomponents = {MainActivityComponent.class, DummyActivityComponent.class})
 public abstract class ActivityBindingModule {
 
     @Binds
     @IntoMap
     @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindMainActivity(
+    abstract AndroidInjector.Factory<? extends Activity> bindMainActivityInjectorFactory(
             MainActivityComponent.Builder builder);
 
     @Binds
     @IntoMap
     @ActivityKey(DummyActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindDummyActivity(
+    abstract AndroidInjector.Factory<? extends Activity> bindDummyActivityInjectorFactory(
             DummyActivityComponent.Builder builder);
 }
