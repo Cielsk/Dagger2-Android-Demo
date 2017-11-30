@@ -26,10 +26,9 @@ public class DummyActivity extends BaseActivity
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dummy_layout);
-
-        AndroidInjection.inject(this);
 
         DummyFragment fragment =
                 (DummyFragment)

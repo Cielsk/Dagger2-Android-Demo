@@ -61,9 +61,9 @@ public final class DummyFragment extends BaseFragment implements DummyContract.V
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        AndroidSupportInjection.inject(this);
         View view = inflater.inflate(R.layout.fragment_dummy_layout, container, false);
         unbinder = ButterKnife.bind(this, view);
-        AndroidSupportInjection.inject(this);
         return view;
     }
 

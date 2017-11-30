@@ -28,10 +28,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AndroidInjection.inject(this);
         ButterKnife.bind(this);
 
         if (mToastContent != null) {
