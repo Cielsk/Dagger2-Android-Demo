@@ -15,7 +15,6 @@ import javax.inject.Named;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import dagger.android.AndroidInjection;
 
 public class MainActivity extends BaseActivity {
 
@@ -31,7 +30,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AndroidInjection.inject(this);
         ButterKnife.bind(this);
 
         if (mToastContent != null) {

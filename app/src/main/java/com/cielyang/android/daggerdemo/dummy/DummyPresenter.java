@@ -1,7 +1,10 @@
 package com.cielyang.android.daggerdemo.dummy;
 
+import com.cielyang.android.daggerdemo.di.ActivityScoped;
+
 import javax.inject.Inject;
 
+@ActivityScoped
 public class DummyPresenter implements DummyContract.Presenter {
 
     private DummyContract.View mView;

@@ -7,20 +7,16 @@ import javax.inject.Named;
 import dagger.Module;
 import dagger.Provides;
 
-/** */
+/**
+ *
+ */
 @Module
 public class DummyFragmentModule {
 
     @FragmentScoped
     @Provides
-    DummyContract.View provideDummyView(DummyFragment fragment) {
-        return fragment;
-    }
-
-    @FragmentScoped
-    @Provides
     @Named("dummy")
-    String provideContent() {
+    static String provideContent() {
         return "Fragment injection succeed!";
     }
 }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.cielyang.android.daggerdemo.R;
 import com.cielyang.android.daggerdemo.base.BaseFragment;
+import com.cielyang.android.daggerdemo.di.ActivityScoped;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -17,8 +18,8 @@ import javax.inject.Named;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import dagger.android.support.AndroidSupportInjection;
 
+@ActivityScoped
 public final class DummyFragment extends BaseFragment implements DummyContract.View {
 
     private static final String TAG = "DummyFragment";
@@ -63,7 +64,7 @@ public final class DummyFragment extends BaseFragment implements DummyContract.V
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dummy_layout, container, false);
         unbinder = ButterKnife.bind(this, view);
-        AndroidSupportInjection.inject(this);
+
         return view;
     }
 

@@ -1,20 +1,17 @@
 package com.cielyang.android.daggerdemo.dummy;
 
-import android.support.v4.app.Fragment;
+import com.cielyang.android.daggerdemo.di.FragmentScoped;
 
-import dagger.Binds;
 import dagger.Module;
-import dagger.android.AndroidInjector;
-import dagger.android.support.FragmentKey;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
-/** */
+/**
+ *
+ */
 @Module
 public abstract class DummyFragmentBindingModule {
 
-    @Binds
-    @IntoMap
-    @FragmentKey(DummyFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment> bindDummyFragment(
-            DummyFragmentComponent.Builder builder);
+    @FragmentScoped
+    @ContributesAndroidInjector(modules = DummyFragmentModule.class)
+    abstract DummyFragment bindDummyFragment();
 }

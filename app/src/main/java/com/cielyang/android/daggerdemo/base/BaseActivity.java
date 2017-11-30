@@ -1,9 +1,10 @@
 package com.cielyang.android.daggerdemo.base;
 
-import android.support.v7.app.AppCompatActivity;
+import android.annotation.SuppressLint;
 
-/**
- *
- */
-public class BaseActivity extends AppCompatActivity {
+import dagger.android.support.DaggerAppCompatActivity;
+
+/** */
+@SuppressLint("Registered")
+public class BaseActivity extends DaggerAppCompatActivity {
 }

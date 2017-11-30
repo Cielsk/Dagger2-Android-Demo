@@ -1,9 +1,7 @@
 package com.cielyang.android.daggerdemo.base;
 
-import android.support.v4.app.Fragment;
+import dagger.android.support.DaggerFragment;
 
-/**
- *
- */
-public class BaseFragment extends Fragment {
+/** */
+public class BaseFragment extends DaggerFragment {
 }

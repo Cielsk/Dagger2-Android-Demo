@@ -1,7 +1,6 @@
 package com.cielyang.android.daggerdemo.dummy;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.cielyang.android.daggerdemo.R;
@@ -9,17 +8,8 @@ import com.cielyang.android.daggerdemo.base.BaseActivity;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
-import dagger.android.AndroidInjector;
-import dagger.android.DispatchingAndroidInjector;
-import dagger.android.support.HasSupportFragmentInjector;
-
 public class DummyActivity extends BaseActivity
-        implements DummyFragment.OnDummyActivityFragmentInteractionListener,
-        HasSupportFragmentInjector {
-
-    @Inject
-    DispatchingAndroidInjector<Fragment> mInjector;
+        implements DummyFragment.OnDummyActivityFragmentInteractionListener {
 
     @Inject
     DummyContract.Presenter mPresenter;
@@ -28,8 +18,6 @@ public class DummyActivity extends BaseActivity
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dummy_layout);
-
-        AndroidInjection.inject(this);
 
         DummyFragment fragment =
                 (DummyFragment)
@@ -44,10 +32,5 @@ public class DummyActivity extends BaseActivity
 
     @Override
     public void onDummyActivityFragmentInteraction() {
-    }
-
-    @Override
-    public AndroidInjector<Fragment> supportFragmentInjector() {
-        return mInjector;
     }
 }
